@@ -1,0 +1,103 @@
+
+a start command
+
+curl https://vast-sierra-19614.herokuapp.com/start -X POST -H "Content-Type: application/json"  -d "{\"width\":20,\"height\":20,\"game_id\":\"example-game-id\"}"
+
+
+The following command generated a 400 error, maybe just needs better looking input data
+
+curl https://vast-sierra-19614.herokuapp.com/move \
+     -X POST \
+     -H "Content-Type: application/json" \
+     --data @- <<-REQUEST_BODY
+   {{"you": {"name": "my-snake", "coords": [[0, 0], [0, 0], [0, 0]]},
+   "turn": 0, "snakes": [{"name": "my-snake", "coords": [[0, 0], [0, 0],
+   [0, 0]]}], "game_id": 0, "food": [[0, 1]], "board": [[{"state": "head",
+   "snake": "my-snake"}, {"state": "food"}], [{"state": "empty"},
+   {"state": "empty"}]]}
+REQUEST_BODY
+
+
+
+This example generates a good reply. Move North!
+
+curl https://vast-sierra-19614.herokuapp.com/move \
+     -X POST \
+     -H "Content-Type: application/json" \
+     --data @- <<-REQUEST_BODY
+{
+  "you": "5b079dcd-0494-4afd-a08e-72c9a7c2d983",
+  "width": 2,
+  "turn": 0,
+  "snakes": [
+    {
+      "taunt": "git gud",
+      "name": "my-snake",
+      "id": "5b079dcd-0494-4afd-a08e-72c9a7c2d983",
+      "health_points": 93,
+      "coords": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "taunt": "gotta go fast",
+      "name": "other-snake",
+      "id": "9116ef2a-51c1-4fb5-9b3f-b5d3fbfcbef6",
+      "health_points": 50,
+      "coords": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    }
+  ],
+  "height": 2,
+  "game_id": "aecf53b9-c7f2-4f5d-bc3f-cd14cb8338f0",
+  "food": [
+    [
+      1,
+      1
+    ]
+  ],
+  "board": [
+    [
+      {
+        "state": "head",
+        "snake": "my-snake"
+      },
+      {
+        "state": "empty"
+      }
+    ],
+    [
+      {
+        "state": "head",
+        "snake": "other-snake"
+      },
+      {
+        "state": "food"
+      }
+    ]
+  ]
+}
+REQUEST_BODY
