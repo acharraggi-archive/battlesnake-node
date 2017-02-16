@@ -10,7 +10,7 @@
   "snake" : {
     "name": "battlesnake-node",
     "color": "#fff000",
-    "head_url": "https://vast-sierra-19614.herokuapp.com/",
+    "head_url": "http://vast-sierra-19614.herokuapp.com/",
     "taunt": {
       "state": "It's great to be alive!",
       "move": "Outta my way snake!",
