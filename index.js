@@ -4,6 +4,7 @@ var express     = require('express');
 var logger      = require('morgan');
 var app         = express();
 var routes      = require('./routes');
+var fs = require('fs');
 
 app.set('port', (process.env.PORT || config.port));
 // For deployment to Heroku, the port needs to be set using ENV, so
