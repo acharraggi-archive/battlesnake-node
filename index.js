@@ -4,7 +4,6 @@ var express     = require('express');
 var logger      = require('morgan');
 var app         = express();
 var routes      = require('./routes');
-var fs = require('fs');
 
 app.set('port', (process.env.PORT || config.port));
 // For deployment to Heroku, the port needs to be set using ENV, so
@@ -23,10 +22,6 @@ app.use('*',function (req, res, next) {
     res.status(200);
     res.end();
     next();
-  } else if (req.url === '/head.png') {
-      var img = fs.readFileSync('./head.png');
-      res.writeHead(200, {'Content-Type': 'image/png' });
-      res.end(img, 'binary');
   } else {
           // Reroute all 404 routes to the 404 handler
           var err = new Error();

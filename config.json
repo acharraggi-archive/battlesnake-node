@@ -3,6 +3,7 @@
   "port": 9001,
   "routes": {
     "info": "/",
+    "head": "/head.png",
     "start": "/start",
     "move": "/move",
     "end": "/end"

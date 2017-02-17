@@ -1,6 +1,7 @@
 var config  = require('../config.json');
 var express = require('express');
 var router  = express.Router();
+var fs = require('fs');
 
 // Handle GET request to '/'
 router.get(config.routes.info, function (req, res) {
@@ -13,6 +14,14 @@ router.get(config.routes.info, function (req, res) {
   };
 
   return res.json(data);
+});
+
+// Handle GET request to '/head.png'
+router.get(config.routes.head, function (req, res) {
+    // Response data
+    var img = fs.readFileSync('./head.png');
+    res.writeHead(200, {'Content-Type': 'image/png' });
+    res.end(img, 'binary');
 });
 
 // Handle POST request to '/start'
