@@ -8,6 +8,8 @@ router.get(config.routes.info, function (req, res) {
   var data = {
     color: config.snake.color,
     head_url: config.snake.head_url,
+      name: config.snake.name,
+      taunt: config.snake.taunt.start
   };
 
   return res.json(data);
