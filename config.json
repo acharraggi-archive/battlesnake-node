@@ -10,7 +10,7 @@
   "snake" : {
     "name": "Snake Plissken",
     "color": "#fff000",
-    "head_url": "http://localhost:5000/",
+    "head_url": "http://vast-sierra-19614.herokuapp.com/head.png",
     "taunt": {
       "state": "It's great to be alive!",
       "move": "I thought you'd be taller.",

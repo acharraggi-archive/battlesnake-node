@@ -22,11 +22,16 @@ app.use('*',function (req, res, next) {
     res.status(200);
     res.end();
     next();
+  } else if (req.url === '/head.png') {
+      var img = fs.readFileSync('./head.png');
+      res.writeHead(200, {'Content-Type': 'image/png' });
+      res.end(img, 'binary');
   } else {
-    // Reroute all 404 routes to the 404 handler
-    var err = new Error();
-    err.status = 404;
-    next(err);
+          // Reroute all 404 routes to the 404 handler
+          var err = new Error();
+          err.status = 404;
+          next(err);
+      }
   }
 
   return;
