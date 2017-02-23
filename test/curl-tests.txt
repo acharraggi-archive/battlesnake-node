@@ -2,6 +2,7 @@
 a start command
 
 curl https://vast-sierra-19614.herokuapp.com/start -X POST -H "Content-Type: application/json"  -d "{\"width\":20,\"height\":20,\"game_id\":\"example-game-id\"}"
+curl http://10.0.9.104:5000/start -X POST -H "Content-Type: application/json"  -d "{\"width\":20,\"height\":20,\"game_id\":\"example-game-id\"}"
 
 
 The following command generated a 400 error, maybe just needs better looking input data
@@ -21,7 +22,7 @@ REQUEST_BODY
 
 This example generates a good reply. Move North!
 
-curl https://vast-sierra-19614.herokuapp.com/move \
+curl http://10.0.9.104:5000/move \
      -X POST \
      -H "Content-Type: application/json" \
      --data @- <<-REQUEST_BODY
@@ -101,3 +102,8 @@ curl https://vast-sierra-19614.herokuapp.com/move \
   ]
 }
 REQUEST_BODY
+
+
+Get snake head in browser window:
+http://192.168.3.164:5000/head.png
+http://10.0.9.104:5000/head.png
