@@ -1,5 +1,5 @@
 {
-  "host": "192.168.50.201",
+  "host": "vast-sierra-19614.herokuapp.com",
   "port": 5000,
   "routes": {
     "info": "/",
@@ -11,7 +11,7 @@
   "snake" : {
     "name": "Plissken666",
     "color": "#FF4500",
-    "head_url": "http://192.168.50.201:5000/head.png",
+    "head_url": "http://vast-sierra-19614.herokuapp.com:5000/head.png",
     "taunt": {
       "state": "It's great to be alive!",
       "move": "I thought you'd be taller.",
