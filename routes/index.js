@@ -43,29 +43,29 @@ router.post(config.routes.start, function (req, res) {
     var in_port = process.env.PORT || config.port;      // modify name & colour if using foreman with multiple clients
     winston.log('debug', 'in_port: ', in_port);
 
-    if(config.port != in_port) {
-        name_suffix = "(".concat(in_port).concat(")");
-
-        switch(in_port) {
-            case "5001":
-                snake_color = "#00FF00";
-                break;
-            case "5002":
-                snake_color = "#0000FF";
-                break;
-            case "5003":
-                snake_color = "#FF0000";
-                break;
-            case "5004":
-                snake_color = "#FFFF00";
-                break;
-            case "5005":
-                snake_color = "#00FFFF";
-                break;
-            default:
-                snake_color = "#000000";
-        }
-    }
+    // if(config.port != in_port) {
+    //     name_suffix = "(".concat(in_port).concat(")");
+    //
+    //     switch(in_port) {
+    //         case "5001":
+    //             snake_color = "#00FF00";
+    //             break;
+    //         case "5002":
+    //             snake_color = "#0000FF";
+    //             break;
+    //         case "5003":
+    //             snake_color = "#FF0000";
+    //             break;
+    //         case "5004":
+    //             snake_color = "#FFFF00";
+    //             break;
+    //         case "5005":
+    //             snake_color = "#00FFFF";
+    //             break;
+    //         default:
+    //             snake_color = "#000000";
+    //     }
+    // }
 
   // Response data
   var data = {
