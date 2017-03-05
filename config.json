@@ -1,9 +1,9 @@
 {
-  "host": "192.168.1.69",
+  "host": "192.168.50.201",
   "port": 5000,
   "routes": {
     "info": "/",
-    "head": "/head2.png",
+    "head": "/head.png",
     "start": "/start",
     "move": "/move",
     "end": "/end"
@@ -11,10 +11,11 @@
   "snake" : {
     "name": "Plissken666",
     "color": "#FF4500",
-    "head_url": "http://192.168.1.69:5000/head2.png",
+    "head_url": "http://192.168.50.201:5000/head.png",
     "taunt": {
       "state": "It's great to be alive!",
       "move": "I thought you'd be taller.",
+      "hungry": "Time for a snack.",
       "start": "I thought you were dead.",
       "end": "I've been snaked!"
     }

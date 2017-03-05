@@ -1,3 +1,5 @@
+"use strict";
+
 var config  = require('../config.json');
 var express = require('express');
 var router  = express.Router();
@@ -5,7 +7,7 @@ var fs = require('fs');
 var move_snake = require('../move_snake.js');
 
 const winston = require('winston');
-winston.level = 'info';
+winston.level = 'debug';
 
 // Handle GET request to '/'
 router.get(config.routes.info, function (req, res) {
@@ -24,7 +26,7 @@ router.get(config.routes.info, function (req, res) {
 // Handle GET request to '/head.png'
 router.get(config.routes.head, function (req, res) {
     // Response data
-    var img = fs.readFileSync('./head2.png');
+    var img = fs.readFileSync('./head.png');
     res.writeHead(200, {'Content-Type': 'image/png' });
     res.end(img, 'binary');
 });
@@ -70,7 +72,9 @@ router.post(config.routes.start, function (req, res) {
     color: snake_color,
     head_url: config.snake.head_url,
     name: config.snake.name.concat(name_suffix),
-    taunt: config.taunts.taunt[0]
+    taunt: config.taunts.taunt[0],
+      head_type: "shades",
+      tail_type: "small-rattle"
   };
     winston.log('debug', '/start response', data);
   return res.json(data);
@@ -83,7 +87,7 @@ router.post(config.routes.move, function (req, res) {
 
     winston.log('debug', '/move req.body', req.body);
 
-    var data = move_snake.move6(req.body);
+    var data = move_snake.move8(req.body);
 
     winston.log('info', '/move response', data);
   return res.json(data);
