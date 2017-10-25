@@ -1,3 +1,4 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)]
 # battlesnake-node(js)
 
 A simple [BattleSnake AI](http://battlesnake.io) written in Javascript for NodeJS.
